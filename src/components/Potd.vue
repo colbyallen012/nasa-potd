@@ -1,5 +1,6 @@
 <template>
   <div>
+    <img v-bind:src='photo.hdurl'/>
     <p>{{photo.explanation}}</p>
   </div>
 </template>
