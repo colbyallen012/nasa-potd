@@ -1,6 +1,6 @@
 <template>
   <div>
-    <img v-bind:src='photo.hdurl'/>
+    <img class='potd' v-bind:src='photo.hdurl'/>
     <p>{{photo.explanation}}</p>
   </div>
 </template>
@@ -16,7 +16,12 @@ export default {
 </script>
 
 <style scoped>
-  #p {
-    font-weight: boldg
+  p {
+    font-weight: bold;
+  }
+
+  .potd {
+    width: 100%;
+    height: 25%;
   }
 </style>

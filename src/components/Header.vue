@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Nasa Photo of the Day</h1>
+    <h1>Nasa Astronomy Photo of the Day</h1>
   </div>
 </template>
 

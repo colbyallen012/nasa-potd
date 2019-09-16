@@ -17,11 +17,16 @@ export default {
   },
     data() {
     return {
-      photo: {}
+      photo: {},
+      error: '',
+      monthStart: undefined,
+      today: undefined
     } 
   },
   created: function() {
     this.fetchData();
+    this.endDate();
+    this.startDate()
   },
   methods: {
     fetchData: async function() {
@@ -30,8 +35,21 @@ export default {
         const photo = await result.json()
         this.photo = photo
       } catch (error) {
-        console.log(error)
+        this.error = error
       }
+    },
+      endDate: function() {
+      var today = new Date();
+      var dd = String(today.getDate()).padStart(2, '0');
+      var mm = String(today.getMonth() + 1).padStart(2, '0'); 
+      var yyyy = today.getFullYear();
+      this.today = yyyy + '-' + mm + '-' + dd;
+    },
+    startDate: function() {
+      var today = new Date();
+      var mm = String(today.getMonth() + 1).padStart(2, '0'); 
+      var yyyy = today.getFullYear();
+      this.monthStart = yyyy + '-' + mm + '-' + '01';
     }
   }
 }
