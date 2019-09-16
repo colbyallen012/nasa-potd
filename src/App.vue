@@ -18,15 +18,18 @@ export default {
     data() {
     return {
       photo: {},
-      error: '',
+      monthPhotos: [],
+      error: undefined,
+      monthError: undefined,
       monthStart: undefined,
       today: undefined
     } 
   },
   created: function() {
-    this.fetchData();
     this.endDate();
-    this.startDate()
+    this.startDate();
+    this.fetchData();
+    this.fetchMonthData();
   },
   methods: {
     fetchData: async function() {
@@ -36,6 +39,15 @@ export default {
         this.photo = photo
       } catch (error) {
         this.error = error
+      }
+    },
+    fetchMonthData: async function() {
+      try {
+        const result = await fetch(`https://api.nasa.gov/planetary/apod?api_key=${process.env.VUE_APP_API_KEY}&start_date=${this.monthStart}&end_date=${this.today}`)
+        const monthPhoto = await result.json()
+        this.monthPhotos = monthPhoto
+      } catch (error) {
+        this.monthError = error
       }
     },
       endDate: function() {
