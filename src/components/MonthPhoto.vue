@@ -1,8 +1,13 @@
 <template>
-  <div>
+  <div v-if="monthPhoto.media_type==='image'">
     <h3>{{monthPhoto.date}}</h3>
     <p>{{monthPhoto.title}}</p>
     <img class='photo' v-bind:src='monthPhoto.url'/>
+  </div>
+  <div v-else>
+    <h3>{{monthPhoto.date}}</h3>
+    <p>{{monthPhoto.title}}</p>
+    <video width='200' height='200' controls :src="monthPhoto.url"></video>
   </div>
 </template>
 
