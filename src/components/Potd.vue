@@ -1,8 +1,10 @@
 <template>
   <div id='photoContainer'>
     <img class='potd' v-bind:src='photo.hdurl'/>
+    <div className='infoContainer'>
       <h2>{{photo.title}}</h2>
       <p>{{photo.explanation}}</p>
+    </div>
   </div>
 </template>
 

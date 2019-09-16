@@ -2,18 +2,21 @@
   <div id="app">
     <Header/>
     <Potd v-bind:photo='photo'/>
+    <MonthPhotoContainer v-bind:monthPhotos='monthPhotos'/>
   </div>
 </template>
 
 <script>
 import Header from './components/Header.vue'
 import Potd from './components/Potd.vue'
+import MonthPhotoContainer from './components/MonthPhotoContainer.vue'
 
 export default {
   name: 'app',
   components: {
     Header,
-    Potd
+    Potd,
+    MonthPhotoContainer
   },
     data() {
     return {
