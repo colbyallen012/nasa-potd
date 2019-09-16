@@ -2,6 +2,7 @@
   <div id="app">
     <Header/>
     <Potd v-bind:photo='photo'/>
+    <h2>All Photos This Month</h2>
     <MonthPhotoContainer v-bind:monthPhotos='monthPhotos'/>
   </div>
 </template>
