@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <div v-bind:key='monthPhoto.date' v-for='monthPhoto in monthPhotos'>
+  <div id='monthContainer'>
+    <div id='dayContainer' v-bind:key='monthPhoto.date' v-for='monthPhoto in monthPhotos'>
       <MonthPhoto v-bind:monthPhoto='monthPhoto'/>
     </div>
   </div>
@@ -19,5 +19,13 @@ export default {
 </script>
 
 <style scoped>
+  #monthContainer {
+    display: flex;
+    flex-direction: row;
+    overflow: auto;
+  }
 
+  #dayContainer {
+    margin: 5px;
+  }
 </style>
