@@ -27,5 +27,6 @@ export default {
 
   #dayContainer {
     margin: 5px;
+    background-color: rgba(101, 114, 127, .15);
   }
 </style>
