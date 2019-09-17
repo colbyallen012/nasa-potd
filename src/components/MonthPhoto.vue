@@ -2,11 +2,13 @@
   <div v-if="monthPhoto.media_type ==='image'">
     <h3>{{monthPhoto.date}}</h3>
     <p>{{monthPhoto.title}}</p>
+    <button @click="$emit('view-photo', monthPhoto.date)">View</button>
     <img class='photo' v-bind:src='monthPhoto.url'/>
   </div>
   <div v-else>
     <h3>{{monthPhoto.date}}</h3>
     <p>{{monthPhoto.title}}</p>
+    <button @click="$emit('view-photo', monthPhoto.date)">View</button>
     <video width='200' height='200' controls :src="monthPhoto.url"></video>
   </div>
 </template>
@@ -28,6 +30,9 @@ export default {
     height: 30px;
     text-align: center;
     padding: 5px;
+  }
+  button {
+    margin: 5px 5px;
   }
   .photo {
     height: 200px;

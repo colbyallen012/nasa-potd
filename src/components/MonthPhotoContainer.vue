@@ -1,7 +1,7 @@
 <template>
   <div id='monthContainer'>
     <div id='dayContainer' v-bind:key='monthPhoto.date' v-for='monthPhoto in monthPhotos'>
-      <MonthPhoto v-bind:monthPhoto='monthPhoto'/>
+      <MonthPhoto v-bind:monthPhoto='monthPhoto' v-on:view-photo="$emit('view-photo', monthPhoto.date)"/>
     </div>
   </div>
 </template>
