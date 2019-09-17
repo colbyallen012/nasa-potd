@@ -3,7 +3,7 @@
     <Header/>
     <Potd v-bind:photo='photo'/>
     <h2>All Photos This Month</h2>
-    <MonthPhotoContainer v-bind:monthPhotos='monthPhotos'/>
+    <MonthPhotoContainer v-bind:monthPhotos='monthPhotos' v-on:view-photo="viewPhoto"/>
   </div>
 </template>
 
@@ -66,6 +66,12 @@ export default {
       var mm = String(today.getMonth() + 1).padStart(2, '0'); 
       var yyyy = today.getFullYear();
       this.monthStart = yyyy + '-' + mm + '-' + '01';
+    },
+    viewPhoto(date) {
+      let dated = this.monthPhotos.find(photo => {
+        return photo.date === date
+      })
+      this.photo = dated
     }
   }
 }
