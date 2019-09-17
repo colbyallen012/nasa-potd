@@ -1,6 +1,14 @@
 <template>
-  <div id='photoContainer'>
+  <div v-if="photo.media_type ==='image'" id='photoContainer'>
     <img class='potd' v-bind:src='photo.url'/>
+    <div className='infoContainer'>
+      <h2>{{photo.title}}</h2>
+      <h3>Date: {{photo.date}}</h3>
+      <p>{{photo.explanation}}</p>
+    </div>
+  </div>
+  <div v-else id='photoContainer'>
+    <video width='750' height='475' controls :src="photo.url"></video>
     <div className='infoContainer'>
       <h2>{{photo.title}}</h2>
       <h3>Date: {{photo.date}}</h3>
@@ -33,6 +41,7 @@ export default {
   }
   p {
     font-weight: bold;
+    font-size: 13px;
     padding: 10px;
     margin: auto;
     width: 75%;
