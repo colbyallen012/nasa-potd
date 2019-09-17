@@ -1,5 +1,5 @@
 <template>
-  <div v-if="monthPhoto.media_type==='image'">
+  <div v-if="monthPhoto.media_type ==='image'">
     <h3>{{monthPhoto.date}}</h3>
     <p>{{monthPhoto.title}}</p>
     <img class='photo' v-bind:src='monthPhoto.url'/>

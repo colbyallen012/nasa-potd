@@ -25,6 +25,7 @@ export default {
     flex-direction: row;
     width: 100%;
     height: 100%;
+    background-color: rgba(101, 114, 127, .15);
   }
   #infoContainer {
     padding: 0 10px 0 10px;

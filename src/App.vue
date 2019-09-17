@@ -77,6 +77,18 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  color: #65727F;
+  background-color: black;
+}
+
+h2 {
+  color: orange;
+}
+</style>
+
+<style>
+
+html {
+  background-color: black;
 }
 </style>
