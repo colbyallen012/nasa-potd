@@ -1,8 +1,8 @@
 <template>
   <div id="app">
     <Header/>
-    <Potd v-bind:photo='photo'/>
-    <h2>All Photos This Month</h2>
+    <Potd v-bind:photo='photo' v-on:home-photo="homePhoto"/>
+    <h2>Photos This Month</h2>
     <MonthPhotoContainer v-bind:monthPhotos='monthPhotos' v-on:view-photo="viewPhoto"/>
   </div>
 </template>
@@ -72,6 +72,13 @@ export default {
         return photo.date === date
       })
       this.photo = dated
+    },
+    homePhoto() {
+      let todaysDate = this.today
+      let today = this.monthPhotos.find(photo => {
+        return photo.date === todaysDate
+      })
+      this.photo = today
     }
   }
 }
@@ -89,6 +96,8 @@ export default {
 
 h2 {
   color: orange;
+  margin-top: 5px;
+  margin-bottom: 0;
 }
 </style>
 
