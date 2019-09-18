@@ -96,6 +96,7 @@ export default {
 
 h2 {
   color: orange;
+  margin: 5px 0 2px 0;
 }
 </style>
 

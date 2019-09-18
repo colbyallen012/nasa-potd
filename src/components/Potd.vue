@@ -46,23 +46,38 @@ export default {
   }
   p {
     font-weight: bold;
-    font-size: 13px;
+    font-size: 15px;
     padding: 10px;
-    margin: auto;
+    margin: 5px auto;
     width: 75%;
   }
   .potd {
-    width: 750px;
-    height: 475px;
+    width: 675px;
+    height: 425px;
+  }
+
+  h2 {
+    margin-top: 5px;
   }
 
   h3, h4 {
-    margin: 5px 5px,
+    margin: 5px 0 5px 0;
   }
 
   #video-responsive{
     height: 400px;
     width: 900px;
     margin: 75px 40px 0px 75px;
+  }
+
+  button {
+    background-color: orange;
+    height: 30px;
+    width: 150px;
+    border: 2px solid #65727F;
+    border-radius: 20px;
+    margin: 9px 0 9px 0;
+    font-size: 12px;
+    font-weight: bold;
   }
 </style>
