@@ -2,7 +2,7 @@
   <div id="app">
     <Header/>
     <Potd v-bind:photo='photo' v-on:home-photo="homePhoto"/>
-    <h2>All Photos This Month</h2>
+    <h2>Photos This Month</h2>
     <MonthPhotoContainer v-bind:monthPhotos='monthPhotos' v-on:view-photo="viewPhoto"/>
   </div>
 </template>
@@ -96,7 +96,8 @@ export default {
 
 h2 {
   color: orange;
-  margin: 5px 0 2px 0;
+  margin-top: 5px;
+  margin-bottom: 0;
 }
 </style>
 
