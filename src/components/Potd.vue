@@ -5,15 +5,19 @@
       <h2>{{photo.title}}</h2>
       <h3>Date: {{photo.date}}</h3>
       <p>{{photo.explanation}}</p>
-      <button @click="$emit('home-photo')">Today</button>
+      <button @click="$emit('home-photo')">View Today's Photo</button>
     </div>
   </div>
   <div v-else id='photoContainer'>
-    <video width='750' height='475' controls :src="photo.url"></video>
+    <div id="video-responsive">
+    <iframe id="ytplayer" type="text/html" width="600" height="350"
+      :src="photo.url" frameborder="0"></iframe>
+    </div>
     <div className='infoContainer'>
       <h2>{{photo.title}}</h2>
       <h3>Date: {{photo.date}}</h3>
       <p>{{photo.explanation}}</p>
+      <button @click="$emit('home-photo')">View Today's Photo</button>
     </div>
   </div>
 </template>
@@ -54,5 +58,11 @@ export default {
 
   h3, h4 {
     margin: 5px 5px,
+  }
+
+  #video-responsive{
+    height: 400px;
+    width: 900px;
+    margin: 75px 40px 0px 75px;
   }
 </style>
