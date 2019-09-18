@@ -5,6 +5,7 @@
       <h2>{{photo.title}}</h2>
       <h3>Date: {{photo.date}}</h3>
       <p>{{photo.explanation}}</p>
+      <button @click="$emit('home-photo')">Today</button>
     </div>
   </div>
   <div v-else id='photoContainer'>
