@@ -95,6 +95,18 @@ export default {
     margin: auto;
   }
 
+  #video-responsive{
+    height: 400px;
+    width: 100%;
+    margin: 0px;
+  }
+
+  #ytplayer {
+    height: 400px;
+    width: 100%;
+    margin: 0px;
+  }
+
     p {
     font-weight: bold;
     font-size: 15px;
